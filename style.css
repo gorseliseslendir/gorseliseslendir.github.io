@@ -1,103 +1,166 @@
-/* GENEL AYARLAR */
 :root {
-    --neon-green: #CCFF00;
     --bg-black: #050505;
+    --neon-green: #CCFF00;
+    --text-white: #FFFFFF;
     --text-gray: #888888;
+    --card-bg: #0A0A0A;
 }
 
 body {
     background-color: var(--bg-black);
-    color: white;
+    color: var(--text-white);
     font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-/* NAVIGASYON */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 20px 5%;
-    align-items: center;
-    background: rgba(0,0,0,0.8);
-    position: sticky;
-    top: 0;
+    padding: 30px 10%;
+    position: fixed;
+    width: 100%;
     z-index: 1000;
+    background: rgba(5, 5, 5, 0.9);
 }
 
 .logo-circle {
     background: var(--neon-green);
     color: black;
-    width: 35px;
-    height: 35px;
+    padding: 8px 12px;
     border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     font-weight: bold;
-    margin-right: 10px;
+    box-shadow: 0 0 15px var(--neon-green);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-links a {
-    color: white;
+    color: var(--text-white);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
-.nav-links a.active {
-    color: var(--neon-green);
-}
-
-/* KARTLAR VE DÜZEN */
-.about-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 50px 20px;
-}
-
-.values-grid, .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.value-card, .team-card {
-    background: #111;
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid #222;
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    transition: 0.3s;
 }
 
-.value-card:hover, .team-card:hover {
-    border-color: var(--neon-green);
-    box-shadow: 0 0 15px rgba(204, 255, 0, 0.3);
+.main-title { font-size: 4.5rem; font-weight: 300; }
+.neon-line { width: 80px; height: 4px; background: var(--neon-green); margin: 20px 0; }
+
+.cta-primary {
+    background: var(--neon-green);
+    border: none;
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(204, 255, 0, 0.5);
+    margin-top: 30px;
 }
 
-/* EKİP FOTOĞRAF ALANI */
-.member-photo {
-    width: 70px;
-    height: 70px;
+/* Video Section */
+.video-section {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.video-placeholder {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    background: #111;
+    margin: 40px auto;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(204, 255, 0, 0.1);
+}
+
+.play-trigger {
+    width: 60px;
+    height: 60px;
     background: var(--neon-green);
     color: black;
     border-radius: 50%;
-    margin: 0 auto 15px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
+    align-items: center;
+    font-size: 1.5rem;
 }
 
-h1, h2 { color: white; }
-h2 { color: var(--neon-green); margin-top: 50px; }
-p { color: var(--text-gray); line-height: 1.6; }
+/* Cards */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 50px 10%;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border: 1px solid #222;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--neon-green);
+}
+
+.card-header {
+    color: var(--neon-green);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.card-link {
+    color: var(--neon-green);
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    padding: 80px 10% 40px;
+    border-top: 1px solid #222;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 50px;
+}
+
+.footer-links a {
+    display: block;
+    color: var(--text-gray);
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.8rem;
+}
